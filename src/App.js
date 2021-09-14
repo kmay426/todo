@@ -1,14 +1,14 @@
-
 import './App.css';
+import Tasks from './Components/Tasks';
 
 function App() {
-  const tasks = [
+  const task = [
     {
       chore: 'Buy groceries ',
       id: 0
     },
     {
-      chore: 'Feed dogs ',      
+      chore: 'Feed dogs ',
       id: 1
     },
     {
@@ -20,16 +20,18 @@ function App() {
       id: 3
     }
   ];
-  
-return (
+  return (
     <div>
       <h1>
         May family to do list:
       </h1>
       <div className='items'>
-      {tasks[3].chore}
+        <Tasks chore={task[0].chore} />
+        <Tasks chore={task[1].chore} />
+        <Tasks chore={task[2].chore} />
+        <Tasks chore={task[3].chore} />
       </div>
-      
+
     </div>
   );
 }
