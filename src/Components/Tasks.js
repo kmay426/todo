@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { useState } from 'react';
 
-function Tasks() {
-	const toDo = ['feed cats ', 'feed dogs ', 'walk dogs']
-	const [tasks, setTasks] = useState(toDo);
-	const newToDo = tasks.map(x => <p>{x}</p>)
-	console.log(tasks);
-	window.setTasks = setTasks;
+class Tasks extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { toDo: 'feed dogs' };
+	}
 
-	return (
-		<div>
-			{newToDo}
-		</div>
-	);
+addToDo = () => {
+	this.setState({toDo: 'feed cats'});
 }
 
-// convert to class component & dynamically add items to list 
+	render() {
+		return (
+			<div>
+				<p>
+					{this.state.toDo}
+				</p>
+				<button
+					type='button'
+					onClick={this.addToDo}
+				>Add task</button>
+			</div>
+		);
+	}
+}
 
 export default Tasks;
