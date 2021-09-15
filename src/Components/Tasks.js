@@ -4,23 +4,14 @@ import { useState } from 'react';
 class Tasks extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { toDo: 'feed dogs' };
+		this.state = { toDo: ['feed dogs ', 'feed cats ', 'walk dogs '] };
 	}
 
-addToDo = () => {
-	this.setState({toDo: 'feed cats'});
-}
-
 	render() {
+		const list = this.state.toDo.map(x => <li>{this.state.toDo}</li>);
 		return (
 			<div>
-				<p>
-					{this.state.toDo}
-				</p>
-				<button
-					type='button'
-					onClick={this.addToDo}
-				>Add task</button>
+			{list}
 			</div>
 		);
 	}
