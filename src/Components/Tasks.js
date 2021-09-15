@@ -8,7 +8,7 @@ class Tasks extends Component {
 	}
 
 	render() {
-		const list = this.state.toDo.map(x => <li>{this.state.toDo}</li>);
+		const list = this.state.toDo.map((toDo) => <li>{toDo}</li>);
 		return (
 			<div>
 			{list}
