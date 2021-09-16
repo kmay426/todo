@@ -5,7 +5,7 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function FunctionalComp() {
+function FunctionalComp(props) {
   const [tasks, setTasks] = useState(['feed dogs ', 'feed cats ', 'walk dogs']);
   const [value, setValue] = useState({value: ''})
 
@@ -15,11 +15,11 @@ function FunctionalComp() {
   // const newTest = test.map((test) => <li>{test}</li>)
 
   function handleSubmit() {
-    console.log('you submitted a task')
+    
   };
 
-  function handleChange() {
-    console.log('you are typing')
+  function handleChange(e) {
+    console.log({value: e.target.value})
   }
 
   return (
