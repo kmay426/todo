@@ -10,7 +10,7 @@ function App() {
     <div className='container'>
       <h1>My to do list: </h1>
       {/* <Tasks /> */}
-      <FunctionalComp />
+      <Tasks />
      
     </div>
   );

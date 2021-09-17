@@ -5,38 +5,49 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function FunctionalComp(props) {
+function FunctionalComp() {
   const [tasks, setTasks] = useState(['feed dogs ', 'feed cats ', 'walk dogs']);
-  const [value, setValue] = useState({value: ''})
+  const [value, setValue] = useState('');
+  const [ifSubmit, setIfSubmit] = useState(false)
+  const newTask = tasks.map((task) => <li>{task}</li>);
 
-  const list = tasks.map((tasks) => <li>{tasks}</li>)
-
-  // const test = ['this is a test', 'this is also  test']; mapping example
-  // const newTest = test.map((test) => <li>{test}</li>)
-
-  function handleSubmit() {
-    
+  function submit() {
+    setIfSubmit(true);
+    if (value != '') {
+      setTasks(tasks.concat(value));
+    }
   };
 
-  function handleChange(e) {
-    console.log({value: e.target.value})
+  function change(event) {
+    setValue(event.target.value)
+  }
+
+  function error() {
+    if (value === '' && ifSubmit) {    //invalid 
+      return (
+        <p>Error: You must enter text</p>
+      )
+    }
   }
 
   return (
     <div>
-      {list}
+      {newTask}
       <input
         type='text'
-        value=''
-        required
-        onChange={handleChange}
+        value={value}
+        onChange={change}
       >
       </input>
+
+      {error()}
+
       <div>
         <button
           type='button'
+          //disabled={!value}
           class="btn btn-dark"
-          onClick={handleSubmit}
+          onClick={submit}
         >
           Submit
         </button>
@@ -46,3 +57,5 @@ function FunctionalComp(props) {
 }
 
 export default FunctionalComp;
+
+// repeat this on a classic component: disabled button, error message display, text remove from input after submit

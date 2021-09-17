@@ -43,6 +43,7 @@ class Tasks extends Component {
 					onClick={this.submit}
 					type='button'
 					class="btn btn-dark"
+					disabled={!this.state.value}
 				>
 					Add Item
 				</button>
