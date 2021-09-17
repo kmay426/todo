@@ -57,5 +57,3 @@ function FunctionalComp() {
 }
 
 export default FunctionalComp;
-
-// repeat this on a classic component: disabled button, error message display, text remove from input after submit

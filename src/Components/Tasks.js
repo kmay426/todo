@@ -12,20 +12,19 @@ class Tasks extends Component {
 	}
 
 	submit() {
-		if (this.state.value != '') {
-		this.setState({
-			toDo: this.state.toDo.concat(this.state.value), value: '',
-		})
-	}
- this.setState({value:''})
-};
+		if (this.state.value != '' && this.state.submitted != false) {
+			this.setState({
+				toDo: this.state.toDo.concat(this.state.value), value: '',
+			})
+		}
+		this.setState({ value: '' })
+		
+	};
 
 
 	handleChange(event) {
 		this.setState({ value: event.target.value });
 	}
-
-	//want error to display if button is clicked & there is no text in the input to add to the list
 
 	errorMessage() {
 		if (this.state.value === '' && this.state.submitted) {
@@ -64,10 +63,5 @@ class Tasks extends Component {
 		);
 	}
 }
-
-
-
-
-
 
 export default Tasks;
