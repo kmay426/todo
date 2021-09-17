@@ -18,7 +18,7 @@ class Tasks extends Component {
 			})
 		}
 		this.setState({ value: '' })
-		
+		this.setState({submitted: true})
 	};
 
 
