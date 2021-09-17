@@ -12,10 +12,12 @@ class Tasks extends Component {
 	}
 
 	submit() {
-		this.setState({ 
-			toDo: this.state.toDo.concat(this.state.value), value: '', 
-		 });
-	}
+		if (this.state.value != '') {
+		this.setState({
+			toDo: this.state.toDo.concat(this.state.value), value: '',
+		})
+	}};
+
 
 	handleChange(event) {
 		this.setState({ value: event.target.value });
