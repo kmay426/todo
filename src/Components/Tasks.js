@@ -16,7 +16,9 @@ class Tasks extends Component {
 		this.setState({
 			toDo: this.state.toDo.concat(this.state.value), value: '',
 		})
-	}};
+	}
+ this.setState({value:''})
+};
 
 
 	handleChange(event) {
@@ -49,6 +51,7 @@ class Tasks extends Component {
 					>
 					</input>
 				</div>
+				{this.errorMessage()}
 				<button
 					onClick={this.submit}
 					type='button'
