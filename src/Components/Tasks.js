@@ -12,13 +12,12 @@ class Tasks extends Component {
 	}
 
 	submit() {
-		if (this.state.value != '' && this.state.submitted != false) {
+		if (this.state.value != '') {
 			this.setState({
 				toDo: this.state.toDo.concat(this.state.value), value: '',
 			})
 		}
 		this.setState({ value: '' })
-		this.setState({submitted: true})
 	};
 
 
