@@ -14,11 +14,13 @@ class Tasks extends Component {
 	submit() {
 		if (this.state.value != '') {
 			this.setState({
-				toDo: this.state.toDo.concat(this.state.value), value: '',
+				toDo: this.state.toDo.concat(this.state.value), value: '', submitted: false
 			})
+		} else {
+			this.setState({ submitted: true })
 		}
-		this.setState({ value: '' })
 	};
+
 
 
 	handleChange(event) {
@@ -62,5 +64,7 @@ class Tasks extends Component {
 		);
 	}
 }
+
+// split into several components: tasks should have a task component, create form component consisting of input & button & error message 
 
 export default Tasks;
