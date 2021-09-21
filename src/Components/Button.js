@@ -5,7 +5,7 @@ import Error from './Error';
 class Button extends Component {
   constructor(props) {
     super(props);
-    this.state = { submitted: false }
+    this.state = { showError: false }
     this.submit = this.submit.bind(this);
 
   }
@@ -14,7 +14,10 @@ class Button extends Component {
     if (this.props.value !== '') {
       this.props.addItem(this.props.value)
     }
-    this.setState({ submitted: true });
+    if(this.props.value === ''){
+    this.setState({ showError: true });
+    }
+    if(this.props.value !== '')
     this.props.resetValue();
   };
 
@@ -44,9 +47,8 @@ class Button extends Component {
         {/* needs to show error if the value is an empty string and the submit button is pressed */}
         <Error
           value={this.props.value}
-          submitted={this.state.submitted}
-        />
-        {/* {this.errorMessage()} */}
+          showError={this.state.showError}
+  />
       </div>
     )
   }
