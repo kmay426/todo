@@ -15,7 +15,6 @@ class Form extends Component {
   }
 
   resetValue() {
-    console.log('reset')
     this.setState({value: ''});
    }
 
@@ -24,7 +23,7 @@ class Form extends Component {
     console.log(this.state.value)
     return (
       <div className='container'>
-        <input            // input clear on submit 
+        <input            
           type='text'
           placeholder='Enter task'
           value={this.state.value}
