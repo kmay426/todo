@@ -14,23 +14,16 @@ class Button extends Component {
     if (this.props.value !== '') {
       this.props.addItem(this.props.value)
     }
-    if(this.props.value === ''){
-    this.setState({ showError: true });
-    }
-    if(this.props.value !== '')
-    this.props.resetValue();
-  };
 
-  // errorMessage() {
-  //   console.log(this.state.submitted)
-  //   if (this.props.value === '' && this.state.submitted === true) {
-  //     return (
-  //       <div>
-  //         Please add text.
-  //       </div>
-  //     );
-  //   }
-  // }
+    if (this.props.value === '') {
+      this.setState({ showError: true });
+    }
+
+    if (this.props.value !== '') {
+      this.props.resetValue();
+    }
+
+  };
 
   render() {
     console.log(this.props.value)
@@ -44,11 +37,10 @@ class Button extends Component {
         >
           Add item
         </button>
-        {/* needs to show error if the value is an empty string and the submit button is pressed */}
         <Error
           value={this.props.value}
           showError={this.state.showError}
-  />
+        />
       </div>
     )
   }

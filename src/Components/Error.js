@@ -5,25 +5,24 @@ class Error extends Component {
     super(props);
   }
 
-errorMessage() {
-  if(this.props.showError === true)
-  return (
-    <div>
-      Please add text.
-    </div>
-  )
-}
+  errorMessage() {
+    if (this.props.showError === true)
+      return (
+        <div>
+          Please add text.
+        </div>
+      )
+  }
 
   render() {
-    return(
+    return (
       <div>
         {this.errorMessage()}
-        </div>
-  )
-}
+      </div>
+    )
+  }
 }
 
 export default Error;
 
-// need and error message to display when my input field is an emptry string and the submit button is clicked
 
