@@ -6,6 +6,7 @@ import FunctionalComp from './Components/FunctionalComp';
 import Home from './Components/Home';
 import ToDo from './Components/ToDo';
 import Form from './Components/Form';
+import Button from './Components/Button';
 
 function App() {
   
@@ -13,7 +14,6 @@ function App() {
     <div>
       <Home />
       <ToDo />
-      <Form />
      </div>
   );
 }

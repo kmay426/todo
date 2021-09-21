@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class Tasks extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { toDo: ['feed dogs ', 'feed cats ', 'walk dogs '], value: '', submitted: false };
+		this.state = { toDo: ['Feed dogs ', 'Feed cats ', 'Walk dogs '], value: '', submitted: false };
 		this.submit = this.submit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 	}
