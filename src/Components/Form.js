@@ -6,6 +6,7 @@ class Form extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.resetValue = this.resetValue.bind(this);
+    this.submit = this.submit.bind(this);
     this.state = { value: '', showError: false }
   }
 
@@ -29,7 +30,6 @@ class Form extends Component {
     }
   }
 
-
   render() {
     console.log(this.state.value)
     return (
@@ -44,9 +44,9 @@ class Form extends Component {
         <div className='container'>
           <Button
             addItem={this.props.addItem}
-            value={this.state.value}
             resetValue={this.resetValue}
-            submit={this.props.submit}
+            value={this.state.value}
+            submit={this.submit}
           />
           <Error
             showError={this.state.showError}
