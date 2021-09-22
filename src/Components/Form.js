@@ -17,6 +17,19 @@ class Form extends Component {
     this.setState({ value: '' });
   }
 
+  submit(event) {
+    if (this.state.value !== '') {
+      this.props.addItem(this.state.value)
+      this.setState({ showError: false })
+      this.resetValue();
+    } else {
+      if (this.state.value === '') {
+        this.setState({ showError: true });
+      }
+    }
+  }
+
+
   render() {
     console.log(this.state.value)
     return (
@@ -33,15 +46,12 @@ class Form extends Component {
             addItem={this.props.addItem}
             value={this.state.value}
             resetValue={this.resetValue}
-            onSubmit={this.props.onSubmit}
+            submit={this.props.submit}
           />
-          {/* <Error
-          addItem={this.props.addItem}
-            value={this.state.value}
+          <Error
             showError={this.state.showError}
-            resetValue={this.props.resetValue}
-            onSubmit={this.props.onSubmit}
-            /> */}
+            value={this.state.value}
+          />
         </div>
       </div>
     )
