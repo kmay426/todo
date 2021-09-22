@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import './ToDo.css';
 import Button from './Button';
 import Form from './Form';
+import TaskItem from './TaskItem';
 class ToDo extends Component {
   constructor(props) {
     super(props);
@@ -16,15 +17,13 @@ addItem(item) {
 }
 
   render() {
-
-    const newTask = this.state.tasks.map((tasks) => <li>{tasks}</li>);
+  
+    
 
     return (
-      <div
-        className='container'>
-        {newTask}
-        <Form
-        addItem={this.addItem}/>
+      <div className='container'>
+        {this.state.tasks.map((task) => <TaskItem task={task} />)}
+        <Form addItem={this.addItem}/>
       </div>
     );
   }
@@ -32,4 +31,3 @@ addItem(item) {
 
 export default ToDo;
 
-// tasks should be own component taking prop of each task item 

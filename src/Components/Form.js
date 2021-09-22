@@ -1,13 +1,12 @@
-// enter task form component 
-
 import React, { Component } from 'react'
 import Button from './Button';
+import Error from './Error';
 class Form extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.resetValue = this.resetValue.bind(this);
-    this.state = { value: '' }
+    this.state = { value: '', showError: false }
   }
 
   handleChange(event) {
@@ -15,15 +14,26 @@ class Form extends Component {
   }
 
   resetValue() {
-    this.setState({value: ''});
-   }
+    this.setState({ value: '' });
+  }
+
+  // onSubmit(event) {
+    
+  //   if (this.state.value !== '') {
+  //     this.props.addItem(this.state.value)
+  //     this.resetValue();
+  //     this.setState({ showError: false })
+  //   } else {
+  //     this.setState({ showError: true });
+  //   }
+  // }
 
 
   render() {
     console.log(this.state.value)
     return (
       <div className='container'>
-        <input            
+        <input
           type='text'
           placeholder='Enter task'
           value={this.state.value}
@@ -35,7 +45,15 @@ class Form extends Component {
             addItem={this.props.addItem}
             value={this.state.value}
             resetValue={this.resetValue}
+            onSubmit={this.props.onSubmit}
           />
+          {/* <Error
+          addItem={this.props.addItem}
+            value={this.state.value}
+            showError={this.state.showError}
+            resetValue={this.props.resetValue}
+            onSubmit={this.props.onSubmit}
+            /> */}
         </div>
       </div>
     )

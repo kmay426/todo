@@ -10,6 +10,17 @@ class Button extends Component {
 
   }
 
+  // submit(event) {
+  //   if (this.props.value !== '') {
+  //     this.props.addItem(this.props.value)
+  //     // this.props.resetValue();
+  //     this.setState({ showError: false })
+  //   } else {
+  //     this.setState({ showError: true });
+  //   }
+
+  // };
+
   submit(event) {
     if (this.props.value !== '') {
       this.props.addItem(this.props.value)
@@ -26,7 +37,6 @@ class Button extends Component {
   };
 
   render() {
-    console.log(this.props.value)
     return (
       <div
         className='container'>
@@ -48,5 +58,7 @@ class Button extends Component {
 
 export default Button;
 
-// fix error message 
-// error message is its own component/use props for when it should/shouldn't display 
+// move error rendering to form component 
+// mark items as complete by clicking on the item & it should have a strikethrough & color change 
+// add hover style to each list item 
+
