@@ -10,20 +10,10 @@ class Button extends Component {
 
   }
 
-  // submit(event) {
-  //   if (this.props.value !== '') {
-  //     this.props.addItem(this.props.value)
-  //     // this.props.resetValue();
-  //     this.setState({ showError: false })
-  //   } else {
-  //     this.setState({ showError: true });
-  //   }
-
-  // };
-
   submit(event) {
     if (this.props.value !== '') {
       this.props.addItem(this.props.value)
+      this.setState({ showError: false })
     }
 
     if (this.props.value === '') {

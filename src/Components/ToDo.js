@@ -18,8 +18,6 @@ addItem(item) {
 
   render() {
   
-    
-
     return (
       <div className='container'>
         {this.state.tasks.map((task) => <TaskItem task={task} />)}

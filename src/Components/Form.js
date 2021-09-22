@@ -17,18 +17,6 @@ class Form extends Component {
     this.setState({ value: '' });
   }
 
-  // onSubmit(event) {
-    
-  //   if (this.state.value !== '') {
-  //     this.props.addItem(this.state.value)
-  //     this.resetValue();
-  //     this.setState({ showError: false })
-  //   } else {
-  //     this.setState({ showError: true });
-  //   }
-  // }
-
-
   render() {
     console.log(this.state.value)
     return (
