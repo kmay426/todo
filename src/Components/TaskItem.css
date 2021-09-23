@@ -2,6 +2,10 @@
 text-decoration: line-through;
 }
 
+.task-item {
+  text-decoration: none;
+}
+
 .task-item:hover {
   background-color: aqua;
 }

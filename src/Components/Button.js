@@ -24,6 +24,4 @@ class Button extends Component {
 }
 
 export default Button;
-// mark items as complete by clicking on the item & it should have a strikethrough & color change 
-// add hover style to each list item 
 

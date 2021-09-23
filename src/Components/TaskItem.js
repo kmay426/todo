@@ -8,18 +8,23 @@ class TaskItem extends Component {
     this.state = { completed: false }
   }
 
-  markCompleted() {
-    this.setState({ completed: true })
+  markCompleted() { 
+    this.setState({ completed: true }) 
+    if(this.state.completed === true) {
+      this.setState({ completed: false})
+    }
   }
 
-  //function that determines the class based on state 
-
   taskItemClass() {
-   if (this.state.completed === true) {
+   if (this.state.completed === true) {   
       return 'task-item completed';
     } else {
+      if (this.state.completed === false) {
       return 'task-item';
     }
+  }
+  if(this.state.completed === false)
+  return ('task-item')
   }
 
   render() {

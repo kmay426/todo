@@ -41,6 +41,11 @@ class Form extends Component {
           onChange={this.handleChange}
         >
         </input>
+        <input
+          type='date'
+          
+        >
+        </input>
         <div className='container'>
           <Button
             addItem={this.props.addItem}
