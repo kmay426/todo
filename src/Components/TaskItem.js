@@ -9,10 +9,11 @@ class TaskItem extends Component {
   }
 
   markCompleted() {
-    this.setState({ completed: true })
     if (this.state.completed === true) {
       this.setState({ completed: false })
-    }
+    } else {
+    this.setState({ completed: true })
+  }
   }
 
   taskItemClass() {
@@ -41,7 +42,6 @@ class TaskItem extends Component {
 
 export default TaskItem;
 
-// click to remove strikethrough 
 // add due date to tasks 10/1/21   selecting a calendar 
 // list should display name & date it's due 
 // if past due-display in red 
