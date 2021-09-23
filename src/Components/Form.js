@@ -43,7 +43,6 @@ class Form extends Component {
         </input>
         <input
           type='date'
-          
         >
         </input>
         <div className='container'>

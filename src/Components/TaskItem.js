@@ -12,8 +12,8 @@ class TaskItem extends Component {
     if (this.state.completed === true) {
       this.setState({ completed: false })
     } else {
-    this.setState({ completed: true })
-  }
+      this.setState({ completed: true })
+    }
   }
 
   taskItemClass() {
