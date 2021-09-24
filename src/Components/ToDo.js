@@ -21,8 +21,8 @@ class ToDo extends Component {
     console.log(this.state.tasks, this.state.date)
     return (
       <div className='container'>
-        {this.state.tasks.map((task) => <TaskItem task={task} />)}
-        {this.state.date.map((date) => <li>Due date: {date} </li>)}
+        {this.state.tasks.map((task) => <TaskItem task={task}  />)}
+        {this.state.date.map((date) => <TaskItem date={date} />)}
         <Form addItem={this.addItem} />
       </div>
     );
