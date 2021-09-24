@@ -5,6 +5,7 @@ import './ToDo.css';
 import Button from './Button';
 import Form from './Form';
 import TaskItem from './TaskItem';
+import DateItem from './DateItem';
 class ToDo extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,7 @@ class ToDo extends Component {
     return (
       <div className='container'>
         {this.state.tasks.map((task) => <TaskItem task={task}  />)}
-        {this.state.date.map((date) => <TaskItem date={date} />)}
+        {this.state.date.map((date) => <DateItem date={date} />)}
         <Form addItem={this.addItem} />
       </div>
     );

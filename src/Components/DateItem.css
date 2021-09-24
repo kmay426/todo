@@ -1,0 +1,11 @@
+.date-item.completed {
+  text-decoration: line-through;
+  }
+  
+  .date-item {
+    text-decoration: none;
+  }
+  
+  .date-item:hover {
+    background-color: aqua;
+  }

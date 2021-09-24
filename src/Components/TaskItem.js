@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './TaskItem.css';
+import DateItem from './DateItem';
 
 class TaskItem extends Component {
   constructor(props) {
@@ -27,16 +28,21 @@ class TaskItem extends Component {
 
   }
 
+
+
   render() {
     console.log(this.state.completed)
     return (
-      <li
-        className={this.taskItemClass()}
-        onClick={this.markCompleted}
-      >
-        {this.props.task}
-        {this.props.date}
-      </li>
+      <div>
+        <li
+          className={this.taskItemClass()}
+          onClick={this.markCompleted}
+        >
+          {this.props.task}
+         </li>
+         <DateItem 
+         completed={this.state.completed}/>
+      </div>
     );
   }
 }
