@@ -9,7 +9,7 @@ class Form extends Component {
     this.resetValue = this.resetValue.bind(this);
     this.submit = this.submit.bind(this);
     this.pickDate = this.pickDate.bind(this)
-    this.state = { value: '', showError: false, date: '2021-09-23' }
+    this.state = { value: '', showError: false, date: Date().toLocaleString()}
   }
 
   handleChange(event) {
@@ -21,7 +21,7 @@ class Form extends Component {
   }
 
   submit(event) {
-  
+  console.log(this.state.date)
     if (this.state.value !== '') {
       this.props.addItem(this.state.value, this.state.date)
       this.setState({ showError: false })
