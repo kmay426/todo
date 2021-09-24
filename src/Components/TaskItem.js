@@ -42,6 +42,7 @@ class TaskItem extends Component {
 
 export default TaskItem;
 
-// add due date to tasks 10/1/21   selecting a calendar 
-// list should display name & date it's due 
+
+// make date dynamic to match date each day 
+// due date to cross out along with task 
 // if past due-display in red 

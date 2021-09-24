@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import Button from './Button';
 import Error from './Error';
+
 class Form extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.resetValue = this.resetValue.bind(this);
     this.submit = this.submit.bind(this);
-    this.state = { value: '', showError: false }
+    this.pickDate = this.pickDate.bind(this)
+    this.state = { value: '', showError: false, date: '2021-09-23' }
   }
 
   handleChange(event) {
@@ -19,8 +21,9 @@ class Form extends Component {
   }
 
   submit(event) {
+  
     if (this.state.value !== '') {
-      this.props.addItem(this.state.value)
+      this.props.addItem(this.state.value, this.state.date)
       this.setState({ showError: false })
       this.resetValue();
     } else {
@@ -30,8 +33,11 @@ class Form extends Component {
     }
   }
 
+  pickDate(event) {
+    this.setState({date: event.target.value})
+  }
+
   render() {
-    console.log(this.state.value)
     return (
       <div className='container'>
         <input
@@ -43,6 +49,8 @@ class Form extends Component {
         </input>
         <input
           type='date'
+          value={this.state.date}
+          onChange={this.pickDate}
         >
         </input>
         <div className='container'>
