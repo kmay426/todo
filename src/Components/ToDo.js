@@ -22,13 +22,15 @@ class ToDo extends Component {
     console.log(this.state.tasks, this.state.date)
     return (
       <div className='container'>
-        {this.state.tasks.map((task) => <TaskItem task={task}  />)}
-        {this.state.date.map((date) => <DateItem date={date} />)}
+        {this.state.tasks.map((task, idx) => <TaskItem task={task + ' ' + this.state.date[idx]} />)}
+        {/* {this.state.date.map((date, idx) => <DateItem date={date}  />)} */}
         <Form addItem={this.addItem} />
       </div>
     );
   }
 }
+
+// checking off taskitem-date needs to show as checked off (index)
 
 export default ToDo;
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import './TaskItem.css';
-import DateItem from './DateItem';
+// import DateItem from './DateItem';
 
 class TaskItem extends Component {
   constructor(props) {
     super(props);
     this.markCompleted = this.markCompleted.bind(this);
-    this.state = { completed: false }
+    this.state = { completed: false}
   }
 
   markCompleted() {
@@ -25,10 +25,7 @@ class TaskItem extends Component {
         return 'task-item';
       }
     }
-
   }
-
-
 
   render() {
     console.log(this.state.completed)
@@ -39,9 +36,8 @@ class TaskItem extends Component {
           onClick={this.markCompleted}
         >
           {this.props.task}
-         </li>
-         <DateItem 
-         completed={this.state.completed}/>
+          {this.props.date}
+        </li>
       </div>
     );
   }

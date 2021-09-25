@@ -38,6 +38,7 @@ class Form extends Component {
   }
 
   render() {
+    console.log(this.state.date)
     return (
       <div className='container'>
         <input
