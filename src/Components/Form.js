@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Button from './Button';
 import Error from './Error';
+import TodaysDate from './TodaysDate';
 
 class Form extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class Form extends Component {
     this.resetValue = this.resetValue.bind(this);
     this.submit = this.submit.bind(this);
     this.pickDate = this.pickDate.bind(this)
-    this.state = { value: '', showError: false, date: Date().toLocaleString()}
+    this.state = { value: '', showError: false, date: '09/25/2021' }
   }
 
   handleChange(event) {
@@ -50,7 +51,7 @@ class Form extends Component {
         </input>
         <input
           type='date'
-          value={this.state.date}
+          date={this.state.date}
           onChange={this.pickDate}
         >
         </input>
