@@ -36,7 +36,6 @@ class TaskItem extends Component {
           onClick={this.markCompleted}
         >
           {this.props.task}
-          {this.props.date}
         </li>
       </div>
     );

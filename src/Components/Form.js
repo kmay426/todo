@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Button from './Button';
 import Error from './Error';
-import TodaysDate from './TodaysDate';
 
 class Form extends Component {
   constructor(props) {
@@ -10,19 +9,26 @@ class Form extends Component {
     this.resetValue = this.resetValue.bind(this);
     this.submit = this.submit.bind(this);
     this.pickDate = this.pickDate.bind(this)
-    this.state = { value: '', showError: false, date: '09/25/2021' }
+
+    const date = new Date();
+
+// date objects
+
+    this.state = { value: '', showError: false, date: date.toISOString().substring(0, 10), }
   }
+
+// to ISO string - string functions to out the parts of the date we don't want 
 
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
 
   resetValue() {
-    this.setState({ value: '' });
+    this.setState({ value: '', date: 'mm/dd/yyyy' });
   }
 
   submit(event) {
-  console.log(this.state.date)
+    console.log(this.state.date)
     if (this.state.value !== '') {
       this.props.addItem(this.state.value, this.state.date)
       this.setState({ showError: false })
@@ -35,11 +41,11 @@ class Form extends Component {
   }
 
   pickDate(event) {
-    this.setState({date: event.target.value})
+    this.setState({ date: event.target.value })
   }
 
   render() {
-    console.log(this.state.date)
+    console.log(this.state.currentDateTime)
     return (
       <div className='container'>
         <input
@@ -51,8 +57,8 @@ class Form extends Component {
         </input>
         <input
           type='date'
-          date={this.state.date}
           onChange={this.pickDate}
+          value={this.state.date}   // year day month 
         >
         </input>
         <div className='container'>
@@ -67,6 +73,7 @@ class Form extends Component {
             value={this.state.value}
           />
         </div>
+        <p>{this.state.currentDateTime}</p>
       </div>
     )
   }

@@ -5,7 +5,7 @@ import './ToDo.css';
 import Button from './Button';
 import Form from './Form';
 import TaskItem from './TaskItem';
-import DateItem from './DateItem';
+
 class ToDo extends Component {
   constructor(props) {
     super(props);
@@ -23,14 +23,12 @@ class ToDo extends Component {
     return (
       <div className='container'>
         {this.state.tasks.map((task, idx) => <TaskItem task={task + ' ' + this.state.date[idx]} />)}
-        {/* {this.state.date.map((date, idx) => <DateItem date={date}  />)} */}
         <Form addItem={this.addItem} />
       </div>
     );
   }
 }
 
-// checking off taskitem-date needs to show as checked off (index)
-
 export default ToDo;
 
+// mapping -1st argument available is the element and 2nd argument is the index 
