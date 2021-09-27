@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './TaskItem.css';
-// import DateItem from './DateItem';
+
 
 class TaskItem extends Component {
   constructor(props) {
@@ -43,8 +43,3 @@ class TaskItem extends Component {
 }
 
 export default TaskItem;
-
-
-// make date dynamic to match date each day 
-// due date to cross out along with task 
-// if past due-display in red 

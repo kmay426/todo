@@ -1,10 +1,24 @@
 import React, { Component } from 'react'
 
 class PastDue extends Component {
+  constructor(props){
+    super(props)
+  }
+
+dueDateClass() {
+  if (this.props.date > Date.now()) {
+  return 'not-past-due';
+} else {
+  if (this.props.date < Date.now())
+  return 'past-due'
+}
+}
+
   render() {
     return (
-      <div>
-        
+      <div 
+      className={this.dueDateClass()}
+      >
       </div>
     )
   }

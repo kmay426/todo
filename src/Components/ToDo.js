@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import './ToDo.css';
-import Button from './Button';
+import PastDue from './PastDue';
 import Form from './Form';
 import TaskItem from './TaskItem';
 
@@ -24,6 +24,7 @@ class ToDo extends Component {
       <div className='container'>
         {this.state.tasks.map((task, idx) => <TaskItem task={task + ' ' + this.state.date[idx]} />)}
         <Form addItem={this.addItem} />
+        <PastDue date={this.state.date} />
       </div>
     );
   }

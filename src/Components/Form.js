@@ -12,20 +12,19 @@ class Form extends Component {
 
     const date = new Date();
 
-// date objects
-
     this.state = { value: '', showError: false, date: date.toISOString().substring(0, 10), }
   }
 
-// to ISO string - string functions to out the parts of the date we don't want 
+  
 
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
 
   resetValue() {
-    this.setState({ value: '', date: 'mm/dd/yyyy' });
-  }
+    const date = new Date();
+    this.setState({ value: '', date: date.toISOString().substring(0, 10) });
+    }
 
   submit(event) {
     console.log(this.state.date)
@@ -45,7 +44,7 @@ class Form extends Component {
   }
 
   render() {
-    console.log(this.state.currentDateTime)
+    
     return (
       <div className='container'>
         <input
@@ -58,7 +57,7 @@ class Form extends Component {
         <input
           type='date'
           onChange={this.pickDate}
-          value={this.state.date}   // year day month 
+          value={this.state.date} 
         >
         </input>
         <div className='container'>
@@ -73,7 +72,6 @@ class Form extends Component {
             value={this.state.value}
           />
         </div>
-        <p>{this.state.currentDateTime}</p>
       </div>
     )
   }
