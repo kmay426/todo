@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import './ToDo.css';
 import Form from './Form';
 import TaskItem from './TaskItem';
-import isOverdue from '../Utility/Overdue';
 
 class ToDo extends Component {
   constructor(props) {

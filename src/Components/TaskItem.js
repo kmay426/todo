@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './TaskItem.css';
+import { isOverDue } from '../Utility/isOverDue';
 
-
-function isOverDue(date) {
-  return Date.now() > Date.parse(date)
-  }
+// function isOverDue(date) {
+//   return Date.now() > Date.parse(date)
+//   }
 
 class TaskItem extends Component {
   constructor(props) {
