@@ -46,12 +46,11 @@ class TaskItem extends Component {
         >
           {this.props.task}
         </li>
-        <li
+        <div
           className={this.overDueClass()}
-          >
+        >
           {this.props.date}
-        </li>
-
+        </div>
       </div>
     );
   }
