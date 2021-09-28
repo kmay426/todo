@@ -1,16 +1,11 @@
 import React, { Component } from 'react'
 import './TaskItem.css';
 import { isOverDue } from '../Utility/isOverDue';
-
-// function isOverDue(date) {
-//   return Date.now() > Date.parse(date)
-//   }
-
 class TaskItem extends Component {
   constructor(props) {
     super(props);
     this.markCompleted = this.markCompleted.bind(this);
-    this.state = { completed: false}
+    this.state = { completed: false }
   }
 
   markCompleted() {
@@ -31,33 +26,38 @@ class TaskItem extends Component {
     }
   }
 
-   overDueClass() {
-     if (isOverDue(this.props.date) === true) {
-       return 'overdue-task';
-     } else {
-       return 'not-overdue'
-     }
-   }
-    
+  overDueClass() {
+    if (isOverDue(this.props.date) === true) {
+      return 'overdue-task';
+    } else {
+      return 'not-overdue'
+    }
+  }
+
   render() {
-    const taskItemClass = this.taskItemClass() + ' ' + this.overDueClass();
-    console.log(taskItemClass)
+    // const taskItemClass = this.taskItemClass()
+    //   + ' ' + this.overDueClass();
+    // console.log(taskItemClass)
     return (
       <div>
         <li
-          className={taskItemClass}
+          className={this.taskItemClass()}
           onClick={this.markCompleted}
         >
           {this.props.task}
         </li>
+        <li
+          className={this.overDueClass()}
+          >
+          {this.props.date}
+        </li>
+
       </div>
     );
   }
 }
 
 export default TaskItem;
-
-// create a new folder in the src folder called utility & move the is overDueFunction to its own file, import that function into this file 
 
 // show only the date in red if past due, leaving text in black 
 

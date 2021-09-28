@@ -17,15 +17,14 @@ class ToDo extends Component {
     this.setState({ tasks: this.state.tasks.concat(item), date: this.state.date.concat(date) })
   }
 
-  isOverdue(task) {
-    return !task.complete && task.date < new Date().getTime();
-  }
-
   render() {
     console.log(this.state.tasks, this.state.date)
     return (
       <div className='container'>
-        {this.state.tasks.map((task, idx) => <TaskItem task={task + ' ' + this.state.date[idx]} date={this.state.date[idx]} />)}
+        {this.state.tasks.map((task, idx) => <TaskItem task={task} 
+        // + ' ' + this.state.date[idx]} 
+           date={this.state.date[idx]}  
+            />)}
         <Form addItem={this.addItem} />
       </div>
     );
