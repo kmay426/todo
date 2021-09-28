@@ -6,18 +6,11 @@ text-decoration: line-through;
   text-decoration: none;
 }
 
+
 .task-item:hover {
   background-color: aqua;
 }
 
-.date-item.completed {
-  text-decoration: line-through;
-  }
-  
-  .date-item {
-    text-decoration: none;
-  }
-  
-  .date-item:hover {
-    background-color: aqua;
-  }
+.overdue-task {
+  color: red;
+}

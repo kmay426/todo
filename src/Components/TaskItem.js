@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import './TaskItem.css';
 
 
+function isOverDue(date) {
+  return Date.now() > Date.parse(date)
+  }
+
 class TaskItem extends Component {
   constructor(props) {
     super(props);
@@ -27,12 +31,21 @@ class TaskItem extends Component {
     }
   }
 
+   overDueClass() {
+     if (isOverDue(this.props.date) === true) {
+       return 'overdue-task';
+     } else {
+       return 'not-overdue'
+     }
+   }
+    
   render() {
-    console.log(this.state.completed)
+    const taskItemClass = this.taskItemClass() + ' ' + this.overDueClass();
+    console.log(taskItemClass)
     return (
       <div>
         <li
-          className={this.taskItemClass()}
+          className={taskItemClass}
           onClick={this.markCompleted}
         >
           {this.props.task}
@@ -43,3 +56,9 @@ class TaskItem extends Component {
 }
 
 export default TaskItem;
+
+// create a new folder in the src folder called utility & move the is overDueFunction to its own file, import that function into this file 
+
+// show only the date in red if past due, leaving text in black 
+
+// create functionality to sort this list by duedate - when a button is clicked-the oldest are at the top (ascending order/terms of priority)

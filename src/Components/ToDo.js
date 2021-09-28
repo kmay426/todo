@@ -2,15 +2,15 @@
 
 import React, { Component } from 'react';
 import './ToDo.css';
-import PastDue from './PastDue';
 import Form from './Form';
 import TaskItem from './TaskItem';
+import isOverdue from '../Utility/Overdue';
 
 class ToDo extends Component {
   constructor(props) {
     super(props);
     this.addItem = this.addItem.bind(this);
-    this.state = { tasks: ['Feed dogs', 'Walk dogs', 'Wash car', 'Feed cats'], date: ['2021-10-01 ', '2021-10-02 ', '2021-10-06 ', '2021-10-10 '] }
+    this.state = { tasks: ['Feed dogs', 'Walk dogs', 'Wash car', 'Feed cats'], date: ['2021-10-01 ', '2021-08-02 ', '2021-10-06 ', '2021-10-10 '] }
   }
 
   addItem(item, date) {
@@ -18,13 +18,16 @@ class ToDo extends Component {
     this.setState({ tasks: this.state.tasks.concat(item), date: this.state.date.concat(date) })
   }
 
+  isOverdue(task) {
+    return !task.complete && task.date < new Date().getTime();
+  }
+
   render() {
     console.log(this.state.tasks, this.state.date)
     return (
       <div className='container'>
-        {this.state.tasks.map((task, idx) => <TaskItem task={task + ' ' + this.state.date[idx]} />)}
+        {this.state.tasks.map((task, idx) => <TaskItem task={task + ' ' + this.state.date[idx]} date={this.state.date[idx]} />)}
         <Form addItem={this.addItem} />
-        <PastDue date={this.state.date} />
       </div>
     );
   }

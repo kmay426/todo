@@ -1,4 +1,4 @@
-import './App.css';
+
 import Tasks from './Components/Tasks';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';

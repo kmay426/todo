@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Tasks.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -64,7 +63,5 @@ class Tasks extends Component {
 		);
 	}
 }
-
-// split into several components: tasks should have a task component, create form component consisting of input & button & error message 
 
 export default Tasks;

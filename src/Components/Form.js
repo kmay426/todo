@@ -15,8 +15,6 @@ class Form extends Component {
     this.state = { value: '', showError: false, date: date.toISOString().substring(0, 10), }
   }
 
-  
-
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
@@ -24,7 +22,7 @@ class Form extends Component {
   resetValue() {
     const date = new Date();
     this.setState({ value: '', date: date.toISOString().substring(0, 10) });
-    }
+  }
 
   submit(event) {
     console.log(this.state.date)
@@ -44,7 +42,7 @@ class Form extends Component {
   }
 
   render() {
-    
+
     return (
       <div className='container'>
         <input
@@ -57,7 +55,7 @@ class Form extends Component {
         <input
           type='date'
           onChange={this.pickDate}
-          value={this.state.date} 
+          value={this.state.date}
         >
         </input>
         <div className='container'>
@@ -78,3 +76,4 @@ class Form extends Component {
 }
 
 export default Form;
+
