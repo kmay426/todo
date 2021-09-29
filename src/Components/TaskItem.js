@@ -26,6 +26,7 @@ class TaskItem extends Component {
     }
   }
 
+
   overDueClass() {
     if (isOverDue(this.props.date) === true) {
       return 'overdue-task';
@@ -38,19 +39,20 @@ class TaskItem extends Component {
     // const taskItemClass = this.taskItemClass()
     //   + ' ' + this.overDueClass();
     // console.log(taskItemClass)
+
     return (
       <div>
         <li
           className={this.taskItemClass()}
           onClick={this.markCompleted}
         >
-          {this.props.task}
+          {this.props.task} &nbsp;
+          <span
+            className={this.overDueClass()}
+          >
+            {this.props.date}
+          </span>
         </li>
-        <div
-          className={this.overDueClass()}
-        >
-          {this.props.date}
-        </div>
       </div>
     );
   }
@@ -58,6 +60,6 @@ class TaskItem extends Component {
 
 export default TaskItem;
 
-// show only the date in red if past due, leaving text in black 
-
 // create functionality to sort this list by duedate - when a button is clicked-the oldest are at the top (ascending order/terms of priority)
+
+// start with adding a button onclick will make it sort the list-items earliest due at the top 
